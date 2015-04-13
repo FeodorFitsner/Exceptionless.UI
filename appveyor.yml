@@ -38,13 +38,3 @@ after_test:
 
 artifacts:
   - path: '*.nupkg'
-
-after_deploy:
-  - nuget install OctopusTools
-  - ps: '&(ls .\OctopusTools*\Octo.exe) create-release --project="Exceptionless UI" --version "$env:APPVEYOR_BUILD_VERSION" --server "$env:OCTOPUS_API_URL" --apiKey "$env:OCTOPUS_API_KEY" --deployto Dev'
-  
-notifications:
-  - provider: Slack
-    auth_token:
-      secure: PigIGGo7UUDwdb0KGM/s7OfpAng/OMJx7q33jKfzudFBiXi1EBEd0DRmkbCc7CiX
-    channel: notifications
