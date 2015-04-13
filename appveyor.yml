@@ -35,7 +35,7 @@ test_script:
 after_test:
   - cd ..
   - ps: nuget pack -Version $env:APPVEYOR_BUILD_VERSION
-  - dir %APPDATA%
+  - dir %USERPROFILE%
 
 artifacts:
   - path: '*.nupkg'
