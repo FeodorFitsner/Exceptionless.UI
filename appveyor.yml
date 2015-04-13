@@ -16,7 +16,7 @@ environment:
     secure: 9Uk1fnTNb36QtrWfRCe9vrqVsBaEXGcM1K1mRoLUB0A=
     
 cache:
-  - '%APPDATA%\bower\cache -> src\bower.json'
+  - '%APPDATA%\bower-cache -> src\bower.json'
 
 install:
   - ps: Install-Product node $env:nodejs_version
@@ -35,6 +35,7 @@ test_script:
 after_test:
   - cd ..
   - ps: nuget pack -Version $env:APPVEYOR_BUILD_VERSION
+  - dir %APPDATA%
 
 artifacts:
   - path: '*.nupkg'
