@@ -14,9 +14,10 @@ environment:
   OCTOPUS_API_URL: https://deploy.codesmithtools.com/api
   OCTOPUS_API_KEY:
     secure: 9Uk1fnTNb36QtrWfRCe9vrqVsBaEXGcM1K1mRoLUB0A=
+  bower_storage__cache: C:\Users\Appveyor\AppData\Roaming\bower\cache
 
 cache:
-  - '%USERPROFILE%\bower\cache -> src\bower.json'
+  - '%APPDATA%\bower\cache -> src\bower.json'
 
 install:
   #- ps: "Set-Content \"$env:userprofile\\.bowerrc\" '{\"storage\": { \"cache\" : \"C:/Users/appveyor/bower/cache\" }}'"
