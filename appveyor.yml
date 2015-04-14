@@ -16,7 +16,7 @@ environment:
     secure: 9Uk1fnTNb36QtrWfRCe9vrqVsBaEXGcM1K1mRoLUB0A=
 
 cache:
-  - %USERPROFILE%\bower\cache -> src\bower.json
+  - '%USERPROFILE%\bower\cache -> src\bower.json'
 
 install:
   - ps: Set-Content "$env:userprofile\.bowerrc" '"storage": { "cache" : "~/bower/cache" }'
