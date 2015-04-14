@@ -19,8 +19,8 @@ cache:
   - '%USERPROFILE%\bower\cache -> src\bower.json'
 
 install:
-  - ps: "Set-Content \"$env:userprofile\\.bowerrc\" '{\"storage\": { \"cache\" : \"C:/Users/appveyor/bower/cache\" }}'"
-  - ps: "Get-Content \"$env:userprofile\\.bowerrc\""
+  #- ps: "Set-Content \"$env:userprofile\\.bowerrc\" '{\"storage\": { \"cache\" : \"C:/Users/appveyor/bower/cache\" }}'"
+  #- ps: "Get-Content \"$env:userprofile\\.bowerrc\""
   - ps: Install-Product node $env:nodejs_version
   - cd src
   - npm install -g grunt-cli
@@ -38,6 +38,7 @@ after_test:
   - cd ..
   - ps: nuget pack -Version $env:APPVEYOR_BUILD_VERSION
   - dir %USERPROFILE%
+  - dir C:\Users\Appveyor\AppData\Roaming
 
 artifacts:
   - path: '*.nupkg'
