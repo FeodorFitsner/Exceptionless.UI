@@ -1,7 +1,7 @@
 {
 	"directory" : "bower_components",
 	"storage": {
-	  "cache" : "~/bower/cache",
+	  "cache" : "C:/Users/appveyor/bower/cache",
 	  "registry" : "~/.bower/registry"
 	}
 }
